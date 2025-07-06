@@ -93,11 +93,11 @@ src
  │    │         └── myapp
  │    │             └── com
  │    │                 └── authservice
- │    │                     ├── AuthserviceApplication.java      # Main entry point for the Spring Boot application
- │    │                     ├── annotations                      # Custom annotations for validation, etc.
- │    │                     ├── config                           # Configuration classes (e.g., Spring Security, Swagger)
- │    │                     ├── constant                         # Constant values used throughout the application
- │    │                     ├── controller                       # REST controllers for API endpoints
+ │    │                     ├── AuthserviceApplication.java       # Main entry point for the Spring Boot application
+ │    │                     ├── annotations                       # Custom annotations for validation, etc.
+ │    │                     ├── config                            # Configuration classes (e.g., Spring Security, Swagger)
+ │    │                     ├── constant                          # Constant values used throughout the application
+ │    │                     ├── controller                        # REST controllers for API endpoints
  │    │                     ├── dto                               # Data Transfer Objects (DTOs)
  │    │                     ├── entity                            # JPA entities (database models)
  │    │                     ├── exception                         # Exception handling classes
@@ -106,8 +106,8 @@ src
  │    │                     └── service                           # Service layer to handle business logic
  │    ├── resources
  │    │    ├── application.properties  # Application configuration (database, JWT, etc.)
- │    │    ├── banner.txt             # Custom application banner (optional)
- │    │    └── logback.xml            # Logging configuration for Logback
+ │    │    ├── banner.txt              # Custom application banner (optional)
+ │    │    └── logback.xml             # Logging configuration for Logback
  └── test
       └── java
            └── admin
