@@ -4,6 +4,7 @@ AuthService is an application designed to manage and authenticate users within a
 
 ## Technologies Used
 - Spring Boot 3.x
+- Java 17
 - Spring Security
 - Spring Data JPA
 - MySQL Database
