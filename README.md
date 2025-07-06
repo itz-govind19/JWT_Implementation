@@ -1,6 +1,5 @@
 # JWT_Implementation(AuthService)
 ## Description
-## Description
 
 **AuthService** is an application designed to manage and authenticate users within a system using **JSON Web Tokens (JWT)**. The service is built using **Spring Boot**, **Spring Security**, and **MySQL**.
 
