@@ -44,9 +44,13 @@ spring.datasource.password=root
 mvn clean install
 ```
 ### 4. Run the Application
+  4.1> Using Maven
 ```
-    4.1> mvn spring-boot:run
-    4.2> java -jar target/authservice-0.0.1-SNAPSHOT.jar
+    mvn spring-boot:run
+```
+  4.2> Using java
+```  
+    java -jar target/authservice-0.0.1-SNAPSHOT.jar
 ```
 ### 5. Access Swagger UI
 ```
@@ -63,15 +67,15 @@ http://localhost:8081/swagger-ui.html
         jwt.expiration=7
 ```
 ### 7. Logging Configuration (Update in application.properties)
-  # Log only WARN and above for Spring Framework
+  7.1> Log only WARN and above for Spring Framework
 ```
     logging.level.org.springframework=ERROR
 ```
-  # Enable INFO for your own app code
+  7.2> Enable INFO for your own app code
 ```
     logging.level.admin.myapp.com=INFO
 ```
-  # Enable ERROR for Hikari
+  7.3> Enable ERROR for Hikari
 ```
     logging.level.com.zaxxer.hikari=ERROR
     logging.level.root=ERROR
