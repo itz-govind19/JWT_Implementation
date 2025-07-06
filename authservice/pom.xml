@@ -105,6 +105,11 @@
             <version>8.0.0.Final</version>  <!-- Adjust version as per Jakarta EE 10 and your springdoc compatibility -->
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
+        </dependency>
+
 
     </dependencies>
 
