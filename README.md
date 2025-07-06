@@ -1,6 +1,10 @@
 # JWT_Implementation(AuthService)
 ## Description
-AuthService is an application designed to manage and authenticate users within a system using JSON Web Tokens (JWT). The service is built using Spring Boot, Spring Security, and MySQL.
+## Description
+
+**AuthService** is an application designed to manage and authenticate users within a system using **JSON Web Tokens (JWT)**. The service is built using **Spring Boot**, **Spring Security**, and **MySQL**.
+
+Upon the **first run**, the application will automatically populate the database with the required **roles** (such as `USER`, `ADMIN`, etc.) if they do not already exist. This ensures that the system has the proper roles in place for user authentication and authorization right from the start.
 
 ## Technologies Used
 - Spring Boot 3.x
