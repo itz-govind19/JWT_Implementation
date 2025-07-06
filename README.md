@@ -67,11 +67,11 @@ http://localhost:8081/swagger-ui.html
 ```
     logging.level.org.springframework=ERROR
 ```
-  # Enable DEBUG for your own app code
+  # Enable INFO for your own app code
 ```
     logging.level.admin.myapp.com=INFO
 ```
-  # Enable DEBUG for Hikari
+  # Enable ERROR for Hikari
 ```
     logging.level.com.zaxxer.hikari=ERROR
     logging.level.root=ERROR
