@@ -53,69 +53,8 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
                     errorCode = "PROCESSING_ERROR";
                     break;
             }
-        }
-        // Fallback: Check the cause of the authentication exception
-        else {
-            Throwable cause = authException.getCause();
-
-            // Handle BadCredentialsException which wraps JWT exceptions
-            if (authException instanceof BadCredentialsException) {
-                if (cause instanceof ExpiredJwtException) {
-                    message = "JWT token has expired";
-                    errorCode = "TOKEN_EXPIRED";
-                } else if (cause instanceof SignatureException) {
-                    message = "JWT token signature is invalid";
-                    errorCode = "INVALID_SIGNATURE";
-                } else if (cause instanceof MalformedJwtException) {
-                    message = "JWT token is malformed";
-                    errorCode = "MALFORMED_TOKEN";
-                } else if (cause instanceof JwtException) {
-                    message = "JWT token is invalid";
-                    errorCode = "INVALID_TOKEN";
-                } else {
-                    message = authException.getMessage();
-                    errorCode = "INVALID_CREDENTIALS";
-                }
-            }
-            // Check if the exception message contains JWT-related keywords
-            else if (authException.getMessage() != null) {
-                String exceptionMessage = authException.getMessage().toLowerCase();
-                if (exceptionMessage.contains("expired")) {
-                    message = "JWT token has expired";
-                    errorCode = "TOKEN_EXPIRED";
-                } else if (exceptionMessage.contains("signature")) {
-                    message = "JWT token signature is invalid";
-                    errorCode = "INVALID_SIGNATURE";
-                } else if (exceptionMessage.contains("malformed")) {
-                    message = "JWT token is malformed";
-                    errorCode = "MALFORMED_TOKEN";
-                } else if (exceptionMessage.contains("jwt") || exceptionMessage.contains("token")) {
-                    message = "JWT token is invalid";
-                    errorCode = "INVALID_TOKEN";
-                } else {
-                    message = authException.getMessage();
-                }
-            }
-            // Check the cause directly for JWT exceptions
-            else if (cause != null) {
-                if (cause instanceof ExpiredJwtException) {
-                    message = "JWT token has expired";
-                    errorCode = "TOKEN_EXPIRED";
-                } else if (cause instanceof SignatureException) {
-                    message = "JWT token signature is invalid";
-                    errorCode = "INVALID_SIGNATURE";
-                } else if (cause instanceof MalformedJwtException) {
-                    message = "JWT token is malformed";
-                    errorCode = "MALFORMED_TOKEN";
-                } else if (cause instanceof JwtException) {
-                    message = "JWT token is invalid";
-                    errorCode = "INVALID_TOKEN";
-                }
-            }
-            // Handle other authentication exceptions
-            else {
-                message = authException.getMessage() != null ? authException.getMessage() : "Authentication failed";
-            }
+        } else {
+            message = authException.getMessage() != null ? authException.getMessage() : "Authentication failed";
         }
 
         Map<String, Object> body = new HashMap<>();
